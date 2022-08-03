@@ -1,0 +1,57 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Billing calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="mainTitle">
+      <h3>SPLITTER</h3>
+    </div>
+    <div class="bigBox">
+      <div class="child1">
+        <div class="input">
+          <label>Bill</label>
+          <input type="text" id="bill" value="30" />
+        </div>
+        <div class="button">
+          <h5>select Tip %</h5>
+          <div class="firstLine">
+            <button class="tips" id="five">5%</button>
+            <button class="tips" id="ten">10%</button>
+            <button class="tips" id="fifteen">15%</button>
+          </div>
+          <div class="secondLine">
+            <button class="tips" id="twentyFive">25%</button>
+            <button class="tips" id="fifty">50%</button>
+            <input type="text" id="custom" placeholder="custom" />
+          </div>
+        </div>
+        <div class="input">
+          <label>number of people</label>
+          <input type="text" id="numberOfPeople" value="1" />
+        </div>
+      </div>
+
+      <div class="output">
+        <div class="firstOutput">
+          <h4>$0.00</h4>
+          <h5>Tip amount</h5>
+          <p>/Person</p>
+        </div>
+        <br />
+        <div class="secondOutput">
+          <h4>$0.00</h4>
+          <h5>Total</h5>
+          <p>/Person</p>
+        </div>
+        <div class="thirdOutput">
+          <button type="reset">Reset</button>
+        </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>

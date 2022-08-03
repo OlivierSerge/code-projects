@@ -1,0 +1,66 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  background-color: hsl(185, 41%, 84%);
+}
+.bigBox {
+  display: flex;
+  background-color: white;
+  padding: 25px;
+  border-radius: 15px;
+  gap: 15px;
+}
+.child1 {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+.input {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  background-color: hsl(185, 41%, 84%);
+  border-style: none;
+}
+button {
+  background-color: hsl(183, 100%, 15%);
+  width: 50px;
+  margin-bottom: 5px;
+  border-color: hsl(183, 100%, 15%);
+  border-style: none;
+  border-radius: 2px;
+}
+.secondLine input{
+  background-color: hsl(180, 33%, 98%);
+  width: 50px;
+  border-color: hsl(183, 100%, 15%);
+  border-style: none;
+  border-radius: 2px;
+}
+.output {
+  width: 200px;
+  background-color: hsl(183, 100%, 15%);
+  border-radius: 2vh;
+  padding: 10px;
+}
+.output h4 {
+  float: right;
+  font-size: medium;
+  font-weight: bolder;
+}
+.output button{
+  background-position: center;
+  background-color: aqua;
+  width: 180px;height: 20;
+  margin-left: 15;margin-top: 2vh;
+  font-weight: bold;
+}
