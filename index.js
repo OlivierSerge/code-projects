@@ -4,21 +4,24 @@ let selectedTipInPercentage = 5;
 let selectedNumber = 1;
 const title = document.querySelector(".firstOutput h4");
 const tipBtns = document.getElementsByClassName("tips");
+const totalBill = document.querySelector(".secondOutput h4");
 
 console.log("===tip btns===>", tipBtns[4].innerText.split("%")[0]);
-for(let i =0; i<tipBtns.length; i++){
-  tipBtns[i].addEventListener('click', ()=>{
+for (let i = 0; i < tipBtns.length; i++) {
+  tipBtns[i].addEventListener("click", () => {
     console.log("====tip clicked==>", tipBtns[i].innerText.split("%")[0]);
     selectedTipInPercentage = tipBtns[i].innerText.split("%")[0];
-  })
+  });
 }
 
 billInput.addEventListener("change", (e) => {
   selectedBill = e.target.value;
   console.log("selected bill is", selectedBill);
   const calcatedTip = calculateTip(selectedBill, selectedTipInPercentage);
-  const calclatedBillAmt = billPerPerson(calcatedTip, selectedNumber);
-  title.innerText = calclatedBillAmt;
+  const calclatedTipAmt = billPerPerson(calcatedTip, selectedNumber);
+  const computedBill = billPerPerson(selectedBill, selectedNumber);
+  title.innerText += calclatedTipAmt;
+  totalBill.innerText += computedBill;
 });
 
 // const tipFive = document.getElementById("five");
@@ -38,6 +41,7 @@ billInput.addEventListener("change", (e) => {
 const customTip = document.getElementById("custom");
 customTip.addEventListener("change", (e) => {
   selectedTipInPercentage = e.target.value;
+  console.log("===The selected tip is===>", selectedTipInPercentage);
 });
 const numberOfPeople = document.getElementById("numberOfPeople");
 numberOfPeople.addEventListener("change", (e) => {
@@ -50,19 +54,8 @@ function calculateTip(billAmount, tipPercentage) {
   return tipAmount;
 }
 
-function calculatePersonAge(birthYear, currentYear) {
-  const age = currentYear - birthYear;
-  return age;
-}
-
-calculatePersonAge(2005, 2022);
-
-function checkIfNumberIsOddOrEven(number) {
-  if (number % 2 === 0) return "number is evem";
-}
-
-function billPerPerson(billAmount, numberOfPeople) {
-  const billPerPerson = billAmount / numberOfPeople;
+function billPerPerson(selectedBill, numberOfPeople) {
+  const billPerPerson = selectedBill / numberOfPeople;
   return billPerPerson;
 }
 function tipPerPerson(tipAmount, numberOfPeople) {
@@ -70,9 +63,16 @@ function tipPerPerson(tipAmount, numberOfPeople) {
   return tipPerPerson;
 }
 title.style.color = "red";
-title.textContent = "$100";
+title.textContent = "$";
+totalBill.style.color = "red";
+totalBill.textContent = "$";
 // title.innerText = "text";
 console.log(title);
+console.log(totalBill);
+const resetBtn = document.getElementById("resetButton");
+resetBtn.addEventListener("click", () => {
+  alert("Thank You for shopping with us");
+});
 
 //const newDiv = document.createElement("div");
 //newDiv.innerHTML = <h2>Serge</h2>;
